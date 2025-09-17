@@ -8,6 +8,7 @@ async function getCharacters() {
 
         // Sélectionner l'élément où afficher les personnages
         const charactersList = document.getElementById('characters');
+        charactersList.innerHTML = ""; // Réinitialiser la liste
 
         // Ajouter chaque personnage à la liste
         data.forEach(character => {
@@ -20,5 +21,5 @@ async function getCharacters() {
     }
 }
 
-// Appel de la fonction pour récupérer et afficher les données
-getCharacters();
+// Appeler la fonction après chargement du DOM
+document.addEventListener('DOMContentLoaded', getCharacters);
