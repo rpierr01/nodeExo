@@ -1,7 +1,7 @@
 import React from 'react';
 import characters from '../data/characters.json';
 
-const CharactersList = () => (
+const CharactersList = ({ characters = [] }) => (
   <ul>
     {characters.map(character => (
       <li key={character.id}>{character.name}</li>

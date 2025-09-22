@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <NumberOfCharacters characters={characters} />
-      <CharactersList />
+      <CharactersList characters={characters} />
     </div>
   );
 }

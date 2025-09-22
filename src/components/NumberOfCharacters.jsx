@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NumberOfCharacters = ({ characters }) => {
+const NumberOfCharacters = ({ characters = [] }) => {
   return (
     <p>
       {characters.length === 0
