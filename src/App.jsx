@@ -1,14 +1,15 @@
+import React from 'react';
 import './App.css';
-import characters from './data/characters.json';
-import CharactersList from './components/CharactersList';
-import NumberOfCharacters from './components/NumberOfCharacters';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from './routes.jsx';
+
+const router = createBrowserRouter(routes);
 
 function App() {
   return (
-    <div>
-      <NumberOfCharacters characters={characters} />
-      <CharactersList />
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
