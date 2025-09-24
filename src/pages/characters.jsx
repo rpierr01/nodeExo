@@ -11,7 +11,8 @@ function CharactersPage() {
   return (
     <div>
       <NumberOfCharacters characters={characters} />
-      <CharactersList />
+      {/* passing the characters array to CharactersList */}
+      <CharactersList characters={characters} />
     </div>
   );
 }

@@ -7,16 +7,9 @@ const router = createBrowserRouter(routes);
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div>
-      <NumberOfCharacters characters={characters} />
-      <CharactersList characters={characters} />
-    </div>
-=======
     <>
       <RouterProvider router={router} />
     </>
->>>>>>> pageApp
   );
 }
 
