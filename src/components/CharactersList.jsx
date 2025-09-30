@@ -1,10 +1,12 @@
 import React from 'react';
-import characters from '../data/characters.json';
+import { Link } from 'react-router-dom';
 
 const CharactersList = ({ characters = [] }) => (
   <ul>
     {characters.map(character => (
-      <li key={character.id}>{character.name}</li>
+      <li key={character.id}>
+        <Link to={`/characters/${character.id}`}>{character.name}</Link>
+      </li>
     ))}
   </ul>
 );
