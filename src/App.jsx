@@ -6,7 +6,12 @@ import CharacterPage from './pages/character';
 import AboutPage from './pages/about'; // create if missing
 import ContactPage from './pages/contact'; // create if missing
 
+// Added import to read version from package.json
+import pkg from '../package.json';
+
 function App() {
+  const version = pkg?.version ?? '0.0.0';
+
   return (
     <Router>
       {/* simple navigation */}
@@ -27,6 +32,11 @@ function App() {
         <Route path="*" element={<Navigate to="/characters" replace />} />
         {/* ...existing routes... */}
       </Routes>
+
+      {/* Footer showing app version */}
+      <footer style={{ padding: '8px 12px', borderTop: '1px solid #ddd', textAlign: 'center', marginTop: 16 }}>
+        Version: {version}
+      </footer>
     </Router>
   );
 }
