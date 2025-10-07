@@ -1,16 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1759767096155" clover="3.2.0">
-  <project timestamp="1759767096155" name="All files">
-    <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3" elements="12" coveredelements="12" complexity="0" loc="7" ncloc="7" packages="1" files="1" classes="1"/>
-    <file name="characters-api.js" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/api/characters-api.js">
-      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="10" count="3" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="19" count="4" type="stmt"/>
-      <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="23" count="2" type="stmt"/>
-    </file>
+<coverage generated="1759849963018" clover="3.2.0">
+  <project timestamp="1759849963018" name="All files">
+    <metrics statements="87" coveredstatements="3" conditionals="61" coveredconditionals="3" methods="34" coveredmethods="1" elements="182" coveredelements="7" complexity="0" loc="87" ncloc="87" packages="4" files="18" classes="18"/>
+    <package name="src">
+      <metrics statements="20" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="App.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/App.jsx">
+        <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="Layout.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/Layout.jsx">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="main.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/main.jsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="routes.js" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/routes.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="routes.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/routes.jsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="script.js" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/script.js">
+        <metrics statements="13" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.api">
+      <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="characters-api.js" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/api/characters-api.js">
+        <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="18" coveredstatements="3" conditionals="41" coveredconditionals="3" methods="6" coveredmethods="1"/>
+      <file name="CharacterDetail.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/components/CharacterDetail.jsx">
+        <metrics statements="12" coveredstatements="0" conditionals="37" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="5"/>
+        <line num="53" count="0" type="cond" truecount="0" falsecount="5"/>
+      </file>
+      <file name="CharactersList.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/components/CharactersList.jsx">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="NumberOfCharacters.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/components/NumberOfCharacters.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="10" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages">
+      <metrics statements="42" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="21" coveredmethods="0"/>
+      <file name="NotFoundPage.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/NotFoundPage.jsx">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="about.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/about.jsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="aboutPage.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/aboutPage.jsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="character.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/character.jsx">
+        <metrics statements="18" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+      </file>
+      <file name="characters.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/characters.jsx">
+        <metrics statements="12" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+      </file>
+      <file name="contact.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/contact.jsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="contactPage.jsx" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/contactPage.jsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
   </project>
 </coverage>
