@@ -54,7 +54,11 @@ export async function getCharacterById(id) {
 
   // fallback to local data
   const localList = Array.isArray(characters) ? characters : [];
-  return localList.find(c => String(c.id) === String(id)) || null;
+  const found = localList.find(c => String(c.id) === String(id));
+  if (found) return found;
+
+  // If not found, reject so callers/tests receive an error
+  throw new Error('Character not found');
 }
 
 function sortCharacters(list, sortBy = 'name', order = 'asc') {
