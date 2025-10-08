@@ -1,11 +1,15 @@
 module.exports = {
-  testEnvironment: "jest-fixed-jsdom",
-
+  testEnvironment: "jest-fixed-jsdom", // Use jsdom environment for testing React components
+  // Transform jsx files using babel-jest
   transform: {
     "^.+\\.jsx?$": "babel-jest",
-   // Use jsdom environment for testing React components
-    },
+  },
   collectCoverageFrom: [
-  "src/**/*.{js,jsx}", 
+    "src/**/*.{js,jsx}", // Collect coverage from all js or jsx files in src folder
+    "!src/routes.js", // Exclude routes.js from coverage
+    "!src/main.jsx", // Exclude main.jsx from coverage
+    "!src/App.jsx", // Exclude App.jsx from coverage
+
   ],
-  };
+  testResultsProcessor: 'jest-sonar-reporter',
+};
