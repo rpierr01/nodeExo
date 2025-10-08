@@ -6,8 +6,33 @@ import characters from '../data/characters.json'
  * returns the list of characters
  * @returns 
  */
-export const getCharacters = async () => {
-  return characters;
+export async function getCharacters({ sortBy = 'name', order = 'asc' } = {}) {
+  // 1) try server-side sorted endpoint
+  try {
+    const url = `/api/characters?sort=${encodeURIComponent(sortBy)}&order=${encodeURIComponent(order)}`;
+    const res = await fetch(url);
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data)) return data;
+    }
+  } catch (err) {
+    // ignore network errors and continue to next fallback
+  }
+
+  // 2) try server-side unsorted endpoint
+  try {
+    const res2 = await fetch('/api/characters');
+    if (res2.ok) {
+      const list = await res2.json();
+      if (Array.isArray(list)) return sortCharacters(list, sortBy, order);
+    }
+  } catch (err) {
+    // ignore and fallback to local data
+  }
+
+  // 3) final fallback: local data (characters.json)
+  const localList = Array.isArray(characters) ? characters : [];
+  return sortCharacters(localList, sortBy, order);
 }
 
 /**
@@ -15,10 +40,33 @@ export const getCharacters = async () => {
  * @param {*} id 
  * @returns 
  */
-export const getCharacterById = async (id) => {
-  const character = characters.find(character => character.id === id);
-  if (!character) {
-    throw new Error(`Character with id ${id} not found`);
+export async function getCharacterById(id) {
+  // try server-side single fetch
+  try {
+    const res = await fetch(`/api/characters/${encodeURIComponent(id)}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data) return data;
+    }
+  } catch (err) {
+    // ignore and fallback
   }
-  return character;
+
+  // fallback to local data
+  const localList = Array.isArray(characters) ? characters : [];
+  return localList.find(c => String(c.id) === String(id)) || null;
+}
+
+function sortCharacters(list, sortBy = 'name', order = 'asc') {
+  const dir = order === 'desc' ? -1 : 1;
+  return list.slice().sort((a, b) => {
+    if (sortBy === 'modified') {
+      const da = new Date(a.modified || a.modifiedDate || 0).getTime();
+      const db = new Date(b.modified || b.modifiedDate || 0).getTime();
+      return (da - db) * dir;
+    }
+    const na = (a.name || '').toString();
+    const nb = (b.name || '').toString();
+    return na.localeCompare(nb) * dir;
+  });
 }
