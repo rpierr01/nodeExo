@@ -16,7 +16,12 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run test:coverage
+      - name: Skip SonarCloud scan (no SONAR_TOKEN)
+        if: ${{ !secrets.SONAR_TOKEN }}
+        run: |
+          echo "SONAR_TOKEN not set — skipping SonarCloud scan. Set the SONAR_TOKEN secret in repository settings to enable scanning."
       - name: SonarCloud Scan
+        if: ${{ secrets.SONAR_TOKEN }}
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -24,6 +29,4 @@ jobs:
       # Check the Quality Gate status.
       - name: SonarQube Quality Gate check
         id: sonarqube-quality-gate-check
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        if: ${{ secrets.SONAR_TOKEN
