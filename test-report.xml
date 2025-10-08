@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/api/characters-api.test.js">
+    <testCase name="characters-api getCharacters should return the list of characters" duration="2"/>
+    <testCase name="characters-api getCharacterById should return the correct character when a valid ID is provided" duration="0"/>
+    <testCase name="characters-api getCharacterById getCharacterById returns the character for a valid id" duration="0"/>
+    <testCase name="characters-api getCharacterById getCharacterById throws when id is not found" duration="6"/>
+  </file>
+  <file path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/components/NumberOfCharacters.test.jsx">
+    <testCase name="NumberOfCharacters component renders &quot;There is no character&quot; when characters array is empty" duration="14"/>
+    <testCase name="NumberOfCharacters component renders &quot;There is 1 character&quot; when characters array has one character" duration="2"/>
+    <testCase name="NumberOfCharacters component renders &quot;There is no character&quot; when no characters are provided" duration="1"/>
+  </file>
+  <file path="/Users/remipierron/Library/CloudStorage/OneDrive-UniversitédePoitiers/S5/dev-web-vcod/nodeExo/src/pages/CharactersPage.test.jsx">
+    <testCase name="render CharactersPage component" duration="61"/>
+  </file>
+</testExecutions>
