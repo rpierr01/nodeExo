@@ -14,14 +14,3 @@ module.exports = {
   testResultsProcessor: 'jest-sonar-reporter',
 };
 
-module.exports = {
-  testEnvironment: "jest-fixed-jsdom",
-  transform: { "^.+\\.jsx?$": "babel-jest" },
-  collectCoverageFrom: [
-    "src/**/*.{js,jsx}",
-    "!src/routes.js",
-    "!src/main.jsx",
-    "!src/App.jsx"
-  ],
-  testResultsProcessor: 'jest-sonar-reporter',
-};
