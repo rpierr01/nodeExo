@@ -1,32 +1,63 @@
 name: Quality
+
 on:
   push:
   pull_request:
+
 jobs:
   sonarcloud:
-    name: SonarCloud
+    name: SonarCloud Analysis
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      # 1️⃣ Récupérer le code
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: actions/setup-node@v4
+          fetch-depth: 0  # Nécessaire pour une meilleure pertinence de l'analyse
+
+      # 2️⃣ Configurer Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'npm'
-      - run: npm ci
-      - run: npm run test:coverage
+
+      # 3️⃣ Installer les dépendances
+      - name: Install dependencies
+        run: npm ci
+
+      # 4️⃣ Lancer les tests avec couverture
+      - name: Run tests with coverage
+        run: npm run test:coverage
+
+      # 5️⃣ Vérifier si le token SonarCloud est défini
       - name: Skip SonarCloud scan (no SONAR_TOKEN)
         if: ${{ !secrets.SONAR_TOKEN }}
         run: |
-          echo "SONAR_TOKEN not set — skipping SonarCloud scan. Set the SONAR_TOKEN secret in repository settings to enable scanning."
+          echo "⚠️ SONAR_TOKEN not set — skipping SonarCloud scan."
+          echo "➡️ To enable analysis, go to GitHub > Settings > Secrets and variables > Actions > New repository secret"
+          echo "and create a secret named SONAR_TOKEN with your SonarCloud token."
+
+      # 6️⃣ Lancer l’analyse SonarCloud (si le token est présent)
       - name: SonarCloud Scan
         if: ${{ secrets.SONAR_TOKEN }}
         uses: SonarSource/sonarqube-scan-action@v6
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Récupère les infos de la PR
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      # Check the Quality Gate status.
+
+      # 7️⃣ Vérifier la Quality Gate (bloque si échec)
       - name: SonarQube Quality Gate check
         id: sonarqube-quality-gate-check
-        if: ${{ secrets.SONAR_TOKEN
+        if: ${{ secrets.SONAR_TOKEN }}
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      # 8️⃣ Afficher le résultat final dans les logs
+      - name: Show Quality Gate result
+        if: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          echo "✅ SonarCloud analysis completed successfully."
+          echo "➡️ Check results at: https://sonarcloud.io/projects"
