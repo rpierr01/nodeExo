@@ -1,7 +1,7 @@
 {
   "name": "marvel",
   "private": true,
-  "version": "1.1.1rc1",
+  "version": "1.2.0rc1",
   "type": "module",
   "scripts": {
     "dev": "vite",
